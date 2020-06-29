@@ -2,6 +2,7 @@ import React from "react";
 import Header from "@mindfulstudio/tenjin-ui/Header";
 import { useQuery, gql } from "@apollo/client";
 import { Work } from "@mindfulstudio/tenjin-types/Work";
+import WorksList from "@mindfulstudio/tenjin-ui/WorksList";
 
 const WORKS = gql`
   query WorksQuery {
@@ -26,14 +27,9 @@ export default function Index() {
 
   return (
     <div>
-      <Header>chiangdao.guide</Header>
+      <Header>American English Phonetics for Thai Learners</Header>
       <h2>Works</h2>
-      <ul>
-        {works.map((work) => {
-          return <li key={work.id}>{work.name}</li>;
-        })}
-      </ul>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <WorksList works={works} />
     </div>
   );
 }
