@@ -1,0 +1,5 @@
+{
+  "extends": "@mindfulstudio/tenjin-tsconfig",
+  "exclude": ["node_modules"],
+  "include": ["types/*.ts"]
+}

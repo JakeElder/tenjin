@@ -1,0 +1,13 @@
+{
+  "name": "@mindfulstudio/tenjin-tsconfig",
+  "version": "0.1.0",
+  "description": "TS Config for Tenjin",
+  "author": "Jake Elder",
+  "main": "tsconfig.json",
+  "files": [
+    "tsconfig.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

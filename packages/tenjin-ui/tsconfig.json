@@ -1,0 +1,12 @@
+{
+  "extends": "@mindfulstudio/tenjin-tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@mindfulstudio/tenjin-types/*": ["../tenjin-types/types/*"]
+    },
+    "rootDirs": ["src", "stories"]
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx"]
+}

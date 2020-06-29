@@ -1,0 +1,31 @@
+{
+  "name": "@mindfulstudio/tenjin-types",
+  "version": "0.1.0",
+  "description": "Types for Tenjin",
+  "author": "Jake Elder",
+  "scripts": {
+    "format": "prettier . --write",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "cp package.json types/"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "types"
+  },
+  "dependencies": {
+    "@mindfulstudio/tenjin-tsconfig": "0.1.0",
+    "superstruct": "^0.10.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^9.1.2",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.5"
+  }
+}

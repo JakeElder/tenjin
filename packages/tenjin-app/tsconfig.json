@@ -1,0 +1,12 @@
+{
+  "extends": "@mindfulstudio/tenjin-tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@mindfulstudio/tenjin-types/*": ["../tenjin-types/types/*"],
+      "@mindfulstudio/tenjin-ui/*": ["../tenjin-components/src/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+}
