@@ -113,13 +113,13 @@ jobs:
         run: git log
       - name: Push to Heroku
         run: |
-          git remote add heroku git@heroku.com:tenjin-cms.git
+          git remote add heroku git@heroku.com:tenjin-cms-stage.git
           subtree=`
             git subtree split \
               --prefix packages/tenjin-cms \
               HEAD
           `
-          git push --force heroku ${subtree}:master
+          git push --force heroku ${subtree}:refs/heads/master
 
   deploy_storybook:
     name: Deploy Storybook
@@ -185,5 +185,5 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
           npx lerna run deploy \
-            --scope @mindfulstudio/tenjin-ui \
+            --scope @mindfulstudio/tenjin-app \
             --stream
