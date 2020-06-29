@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-ic.1](https://github.com/JakeElder/tenjin/compare/v0.2.0-ic.0...v0.2.0-ic.1) (2020-06-29)
+
+
+### Bug Fixes
+
+* **cms:** add missing strapi-connector-mongoose dep ([349ddc2](https://github.com/JakeElder/tenjin/commit/349ddc296eab890fd5e95883f47bc124f0e0f69e))
+
+
+
+
+
 # [0.2.0-ic.0](https://github.com/JakeElder/tenjin/compare/v0.1.0...v0.2.0-ic.0) (2020-06-29)
 
 
