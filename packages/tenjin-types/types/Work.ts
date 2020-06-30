@@ -1,8 +1,11 @@
-import { optional, object, string, array, StructType } from "superstruct";
+import { object, string, StructType } from "superstruct";
+import { PersonStruct } from "./Person";
 
-const Struct = object({
+export const WorkStruct = object({
   id: string(),
   name: string(),
+  slug: string(),
+  author: PersonStruct,
 });
 
-export type Work = StructType<typeof Struct>;
+export type Work = StructType<typeof WorkStruct>;
