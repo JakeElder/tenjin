@@ -1,6 +1,6 @@
 {
   "name": "@mindfulstudio/tenjin-ui",
-  "version": "0.3.0-ic.1",
+  "version": "0.3.0",
   "description": "UI Library for Tenjin",
   "scripts": {
     "develop": "start-storybook -p 5010 --ci",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@mindfulstudio/tenjin-tsconfig": "0.1.0",
-    "@mindfulstudio/tenjin-types": "0.3.0-ic.1"
+    "@mindfulstudio/tenjin-types": "0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",

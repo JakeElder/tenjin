@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/JakeElder/tenjin/compare/v0.2.0...v0.3.0) (2020-06-30)
+
+
+### Features
+
+* add people collection, list works from api ([a106c46](https://github.com/JakeElder/tenjin/commit/a106c465a83134b341ecb67cd9425525c26668ea))
+
+
+
+
+
 # [0.3.0-ic.1](https://github.com/JakeElder/tenjin/compare/v0.3.0-ic.0...v0.3.0-ic.1) (2020-06-30)
 
 **Note:** Version bump only for package @mindfulstudio/tenjin-ui

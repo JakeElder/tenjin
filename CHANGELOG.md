@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/JakeElder/tenjin/compare/v0.2.0...v0.3.0) (2020-06-30)
+
+
+### Bug Fixes
+
+* **app:** update index test and page ([9c39b47](https://github.com/JakeElder/tenjin/commit/9c39b470302df415a50dcf0a91ab5bcd018c9a4f))
+* **workspace:** fix graduate script ([e9749fb](https://github.com/JakeElder/tenjin/commit/e9749fb03a60344a3a46165eb93ab251d3cae61e))
+
+
+### Features
+
+* **app:** poll api by default on stage ([6655a0f](https://github.com/JakeElder/tenjin/commit/6655a0f64d302cb11e58168c4d8f7e0a2b588163))
+* add people collection, list works from api ([a106c46](https://github.com/JakeElder/tenjin/commit/a106c465a83134b341ecb67cd9425525c26668ea))
+* pull chapter data from api ([277ea96](https://github.com/JakeElder/tenjin/commit/277ea964787d77ba67b03b7c600cc756b468a46f))
+* **app:** add aepftl/c3 route ([cd735dd](https://github.com/JakeElder/tenjin/commit/cd735ddfd9ed43f73954d4ca01f4043f03593bb0))
+
+
+
+
+
 # [0.3.0-ic.1](https://github.com/JakeElder/tenjin/compare/v0.3.0-ic.0...v0.3.0-ic.1) (2020-06-30)
 
 
