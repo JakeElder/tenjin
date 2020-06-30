@@ -4,7 +4,12 @@
   "useWorkspaces": true,
   "command": {
     "version": {
-      "message": "chore(release): publish %s"
+      "message": "chore(release): publish %s",
+      "conventionalCommits": true,
+      "exact": true
+    },
+    "add": {
+      "exact": true
     }
   }
 }

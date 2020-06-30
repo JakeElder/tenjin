@@ -86,11 +86,8 @@ jobs:
       - name: Version
         run: |
           npx lerna version \
-            --conventional-commits \
             --conventional-prerelease \
             --preid ic \
-            --exact \
-            --ignore-changes '**/*.md' \
             --yes
       - name: Publish
         run: npx lerna publish from-package --yes

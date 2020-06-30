@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "graduate": "npx lerna version --conventional-commits --conventional-graduate --exact --ignore-changes '**/*.md'"
+    "graduate": "npx lerna version --conventional-graduate"
   },
   "workspaces": [
     "packages/*"
