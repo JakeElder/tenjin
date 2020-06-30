@@ -5,7 +5,8 @@
     "paths": {
       "@mindfulstudio/tenjin-types/*": ["../tenjin-types/types/*"],
       "@mindfulstudio/tenjin-ui/*": ["../tenjin-ui/src/*"]
-    }
+    },
+    "types": ["cypress"]
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]

@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 describe("Home Page", () => {
   it("Has the correct title", () => {
     cy.server();
