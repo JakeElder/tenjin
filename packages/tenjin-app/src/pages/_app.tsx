@@ -9,6 +9,11 @@ const client = new ApolloClient({
     uri: process.env.GRAPHQL_URL,
     fetch,
   }),
+  defaultOptions: {
+    watchQuery: {
+      pollInterval: parseInt(process.env.POLL_INTERVAL as string, 10),
+    },
+  },
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
