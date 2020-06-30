@@ -3,10 +3,10 @@
 describe("Home Page", () => {
   it("Has the correct title", () => {
     cy.server();
-    cy.route("POST", "/graphql", "fixture:categories.json");
+    cy.route("POST", "/graphql", "fixture:works.json");
     cy.visit("/");
-    cy.get("h1").contains("chiangdao.guide");
-    cy.get("h2").contains("Categories");
+    cy.get("h1").contains("cmu.works");
+    cy.get("h2").contains("Works");
   });
 });
 

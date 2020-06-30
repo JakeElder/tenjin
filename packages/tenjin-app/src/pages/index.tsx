@@ -27,7 +27,7 @@ export default function Index() {
 
   return (
     <div>
-      <Header>American English Phonetics for Thai Learners</Header>
+      <Header>cmu.works</Header>
       <h2>Works</h2>
       <WorksList works={works} />
     </div>
