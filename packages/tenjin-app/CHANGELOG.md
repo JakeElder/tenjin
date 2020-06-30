@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/JakeElder/tenjin/compare/v0.1.0...v0.2.0) (2020-06-30)
+
+
+### Features
+
+* add WorksList component ([314d8d5](https://github.com/JakeElder/tenjin/commit/314d8d51671af35bf6c99d2f07cc4e13ae90230d))
+
+
+
+
+
 # [0.2.0-ic.0](https://github.com/JakeElder/tenjin/compare/v0.1.0...v0.2.0-ic.0) (2020-06-29)
 
 

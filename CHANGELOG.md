@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/JakeElder/tenjin/compare/v0.1.0...v0.2.0) (2020-06-30)
+
+
+### Bug Fixes
+
+* **cms:** add missing koa-sslify dep ([208cba8](https://github.com/JakeElder/tenjin/commit/208cba8bac5d2cb0baa13a650c8ba7ed79403342))
+* **cms:** add missing strapi-connector-mongoose dep ([9e44736](https://github.com/JakeElder/tenjin/commit/9e44736f94127690d31aa44a2f58734146a3fde3))
+
+
+### Features
+
+* add WorksList component ([314d8d5](https://github.com/JakeElder/tenjin/commit/314d8d51671af35bf6c99d2f07cc4e13ae90230d))
+* **cms:** add Graphql ([c133924](https://github.com/JakeElder/tenjin/commit/c133924733b41518ae0d39f93271c2f51437347c))
+* **cms:** add Works type ([dca4be1](https://github.com/JakeElder/tenjin/commit/dca4be1de691c868558b94c6dd6dc4a31715a689))
+
+
+
+
+
 # [0.2.0-ic.2](https://github.com/JakeElder/tenjin/compare/v0.2.0-ic.1...v0.2.0-ic.2) (2020-06-29)
 
 
