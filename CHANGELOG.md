@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-ic.1](https://github.com/JakeElder/tenjin/compare/v0.3.0-ic.0...v0.3.0-ic.1) (2020-06-30)
+
+
+### Features
+
+* **app:** poll api by default on stage ([6885a15](https://github.com/JakeElder/tenjin/commit/6885a15fcfd23e01a36240acb091fd09b96897c8))
+* pull chapter data from api ([90a01c7](https://github.com/JakeElder/tenjin/commit/90a01c73c165813cd725336f4b329a9021d88cb5))
+
+
+
+
+
 # [0.3.0-ic.0](https://github.com/JakeElder/tenjin/compare/v0.2.0...v0.3.0-ic.0) (2020-06-30)
 
 
