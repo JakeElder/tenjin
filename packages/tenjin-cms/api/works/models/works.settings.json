@@ -11,6 +11,14 @@
   "attributes": {
     "name": {
       "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "author": {
+      "model": "people",
+      "via": "works"
     }
   }
 }

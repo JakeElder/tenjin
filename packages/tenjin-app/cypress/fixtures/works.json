@@ -1,7 +1,15 @@
 {
   "data": {
     "works": [
-      { "id": "1", "name": "American English Phonetics for Thai Learners" }
+      {
+        "id": "1",
+        "name": "Example Work",
+        "slug": "example-work",
+        "author": {
+          "id": "1",
+          "name": "Someone B. Personson"
+        }
+      }
     ]
   }
 }
