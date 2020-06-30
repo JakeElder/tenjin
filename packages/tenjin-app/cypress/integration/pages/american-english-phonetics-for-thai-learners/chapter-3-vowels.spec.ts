@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 const URL = "/american-english-phonetics-for-thai-learners/chapter-3-vowels";
 
 describe("Chapter 3", () => {
