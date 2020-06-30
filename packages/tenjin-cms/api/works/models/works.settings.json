@@ -19,6 +19,10 @@
     "author": {
       "model": "people",
       "via": "works"
+    },
+    "chapters": {
+      "via": "work",
+      "collection": "chapters"
     }
   }
 }

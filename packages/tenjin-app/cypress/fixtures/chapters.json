@@ -1,0 +1,13 @@
+{
+  "data": {
+    "chapters": [
+      {
+        "id": "1",
+        "name": "Chapter 3: Vowels",
+        "description": "This is about Vowels.",
+        "slug": "chapter-3-vowels",
+        "__typename": "Chapters"
+      }
+    ]
+  }
+}
