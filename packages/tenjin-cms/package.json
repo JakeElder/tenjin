@@ -1,7 +1,7 @@
 {
   "name": "@mindfulstudio/tenjin-cms",
   "private": true,
-  "version": "0.3.1-ic.3",
+  "version": "0.3.1",
   "description": "CMS for Tenjin",
   "scripts": {
     "develop": "strapi develop",
