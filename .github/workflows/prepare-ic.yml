@@ -19,6 +19,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npx
+          restore-keys: |
+            ${{ runner.os }}-npx
       - name: Run Lerna changed
         shell: bash --noprofile --norc {0}
         run: |
@@ -44,6 +50,12 @@ jobs:
         with:
           name: changed
           path: .
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npx
+          restore-keys: |
+            ${{ runner.os }}-npx
       - name: Establish required jobs
         id: establish_required_jobs
         run: |
