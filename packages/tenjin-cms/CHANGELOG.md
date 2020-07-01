@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1-ic.0](https://github.com/JakeElder/tenjin/compare/v0.3.0...v0.3.1-ic.0) (2020-07-01)
+
+**Note:** Version bump only for package @mindfulstudio/tenjin-cms
+
+
+
+
+
 # [0.3.0](https://github.com/JakeElder/tenjin/compare/v0.2.0...v0.3.0) (2020-06-30)
 
 
