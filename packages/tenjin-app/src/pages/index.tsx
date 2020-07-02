@@ -1,9 +1,6 @@
 import React from "react";
-import Header from "@mindfulstudio/tenjin-ui/Header";
 import { useQuery, gql } from "@apollo/client";
-import Link from "next/link";
 import { Work } from "@mindfulstudio/tenjin-types/Work";
-import WorksList, { LinkCreator } from "@mindfulstudio/tenjin-ui/WorksList";
 
 const WORKS = gql`
   query WorksQuery {
@@ -19,10 +16,6 @@ const WORKS = gql`
   }
 `;
 
-const linkCreator: LinkCreator = (text, href) => {
-  return <Link href={`/${href}`}>{text}</Link>;
-};
-
 export default function Index() {
   const { loading, error, data } = useQuery(WORKS);
   if (loading) {
@@ -37,9 +30,9 @@ export default function Index() {
 
   return (
     <div>
-      <Header>cmu.works</Header>
+      <h1>cmu.works</h1>
       <h2>Works</h2>
-      <WorksList works={works} linkCreator={linkCreator} />
+      <pre>{JSON.stringify(works, null, 2)}</pre>
     </div>
   );
 }
