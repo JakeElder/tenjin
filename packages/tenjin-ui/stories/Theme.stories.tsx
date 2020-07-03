@@ -1,6 +1,6 @@
 import React from "react";
 import Theme from "../src/Theme";
-import styled from "styled-components";
+import styled, { ThemedStyledProps } from "styled-components";
 
 export default {
   title: "Theme",
@@ -14,12 +14,25 @@ const Wrapper = styled.div`
 
 const H1 = styled.h1`
   margin-top: ${(props) => props.theme.rhythmSizing(1)}rem;
-  ${(props) => props.theme.setFontWithRhythm("Fantasque", 3)}
+  ${(props) => props.theme.setFontWithRhythm("Fantasque", 3, 1)}
+`;
+
+const rhythmic = {
+  height: (units: number) => {
+    return (props: any) => {
+      return `height: ${props.theme.rhythmSizing.call(props.theme, units)}rem`;
+    };
+  },
+};
+
+const Box = styled.div`
+  background-color: #eee;
+  ${rhythmic.height(10)};
 `;
 
 const P1 = styled.p`
   margin-top: ${(props) => props.theme.rhythmSizing(2)}rem;
-  ${(props) => props.theme.setFontWithRhythm("Fantasque", 1, 1.2)}
+  ${(props) => props.theme.setFontWithRhythm("Fantasque", 1)}
 `;
 
 const P2 = styled.p`
