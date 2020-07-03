@@ -99,8 +99,10 @@ jobs:
         run: |
           npx lerna version \
             --conventional-prerelease \
-            --preid ic \
+            --preid beta \
+            --amend \
             --yes
+          git push --force origin $GITHUB_HEAD_REF
       - name: Publish
         run: npx lerna publish from-package --yes
 
