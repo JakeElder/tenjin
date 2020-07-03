@@ -2,18 +2,28 @@ import React from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import "reset-css";
 import styledComponentsRhythm from "@ceteio/styled-components-rhythm";
+import WebFont from "webfontloader";
 import Rhythm from "./Rhythm";
+import capHeight from "cap-height/dist/cap-height";
+
+WebFont.load({
+  custom: {
+    families: ["Fantasque"],
+  },
+  fontactive: capHeight.fontActive(console.log, "H"),
+});
+
+const rhythmHeight = 0.5;
+const show = true;
 
 const rhythm = styledComponentsRhythm({
   baseFontSize: 1,
-  defaultLineHeight: 1,
-  baseLineHeight: 1.2,
-  rhythmHeight: 0.5, // 16px * 0.75rem == 12px
+  defaultLineHeight: 1.3,
+  baseLineHeight: 1,
+  rhythmHeight,
   capHeights: {
-    // Calculated with https://codepen.io/sebdesign/pen/EKmbGL?editors=0011
-    Fantasque: 0.72,
+    Fantasque: 0.645,
   },
-  debug: true,
 });
 
 const GlobalStyles = createGlobalStyle`
@@ -47,7 +57,7 @@ function Theme({ children }: React.PropsWithChildren<{}>) {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <BaseStyles>{children}</BaseStyles>
-      <Rhythm show={false} />
+      <Rhythm show={show} spacing={16 * rhythmHeight} />
     </ThemeProvider>
   );
 }
