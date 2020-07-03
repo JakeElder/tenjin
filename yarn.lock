@@ -1497,6 +1497,11 @@
   dependencies:
     yup "^0.27.0"
 
+"@ceteio/styled-components-rhythm@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ceteio/styled-components-rhythm/-/styled-components-rhythm-2.0.1.tgz#8f3455c3e0c3fedb2bd160a2c6ef227a931a355a"
+  integrity sha1-jzRVw+DD/tsr0WCixu8iepMaNVo=
+
 "@cypress/listr-verbose-renderer@0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@cypress/listr-verbose-renderer/-/listr-verbose-renderer-0.4.1.tgz#a77492f4b11dcc7c446a34b3e28721afd33c642a"
