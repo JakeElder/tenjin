@@ -1,4 +1,4 @@
-name: Prepare Integration Candidate
+name: Publish Beta
 
 on:
   pull_request:
