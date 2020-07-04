@@ -16,21 +16,9 @@ const Root = styled.div<Props>`
   flex-direction: column;
   z-index: -1;
 
-  :before {
-    display: block;
-    content: "";
-    height: 10px;
-    flex: 0;
-  }
-
-  :after {
-    display: block;
-    content: "";
-    flex: 1;
-    background-image: linear-gradient(#e6f1f6 1px, transparent 1px);
-    background-size: 100% ${(props) => props.spacing}px;
-    background-position: 0 ${(props) => props.spacing - 1}px;
-  }
+  background-image: linear-gradient(#e6f1f6 1px, transparent 1px);
+  background-size: 100% ${(props) => props.spacing}px;
+  background-position: 0 ${(props) => props.spacing - 1}px;
 `;
 
 function Rhythm({ spacing, show }: Props) {
