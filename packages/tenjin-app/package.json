@@ -1,6 +1,6 @@
 {
   "name": "@mindfulstudio/tenjin-app",
-  "version": "0.4.0-beta.1",
+  "version": "0.4.0-beta.2",
   "private": true,
   "scripts": {
     "develop": "next dev -p 5020",
@@ -15,7 +15,7 @@
     "@apollo/client": "^3.0.0-rc.8",
     "@mindfulstudio/tenjin-tsconfig": "0.1.0",
     "@mindfulstudio/tenjin-types": "0.3.0",
-    "@mindfulstudio/tenjin-ui": "0.4.0-beta.1",
+    "@mindfulstudio/tenjin-ui": "0.4.0-beta.2",
     "cross-fetch": "^3.0.5",
     "graphql": "^15.1.0",
     "next": "9.3.5",

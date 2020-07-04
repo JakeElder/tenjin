@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-beta.2](https://github.com/JakeElder/tenjin/compare/v0.3.1...v0.4.0-beta.2) (2020-07-04)
+
+
+### Bug Fixes
+
+* **ui:** proper alignment for debug Rhytm ([3a1b64b](https://github.com/JakeElder/tenjin/commit/3a1b64bb0614037f0b4efb9d4058c3547515be7f))
+
+
+### Features
+
+* **ui:** add Theme and ChapterHeader ([9111930](https://github.com/JakeElder/tenjin/commit/91119309383676af9e955a3a44381e8edd053357))
+
+
+
+
+
 # [0.4.0-beta.1](https://github.com/JakeElder/tenjin/compare/v0.3.1...v0.4.0-beta.1) (2020-07-04)
 
 
