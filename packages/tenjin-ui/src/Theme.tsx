@@ -2,16 +2,19 @@ import React from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import "reset-css";
 import styledComponentsRhythm from "@ceteio/styled-components-rhythm";
-import WebFont from "webfontloader";
 import Rhythm from "./Rhythm";
 import capHeight from "cap-height/dist/cap-height";
 
-WebFont.load({
-  custom: {
-    families: ["Fantasque"],
-  },
-  fontactive: capHeight.fontActive(console.log, "H"),
-});
+if (process.env.GET_WEBFONT_CAPHEIGHT) {
+  import("webfontloader").then((WebFont) => {
+    WebFont.load({
+      custom: {
+        families: ["Fantasque"],
+      },
+      fontactive: capHeight.fontActive(console.log, "H"),
+    });
+  });
+}
 
 const rhythmHeight = 0.5;
 const show = true;
