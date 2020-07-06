@@ -2,7 +2,7 @@ import React from "react";
 import ChapterHeader from "../src/components/ChapterHeader";
 
 export default {
-  title: "Chapter Header",
+  title: "Components | Chapter Header",
   component: ChapterHeader,
 };
 
