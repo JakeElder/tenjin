@@ -1,5 +1,5 @@
 import React from "react";
-import Rhythm from "../src/Rhythm";
+import Rhythm from "../src/components/Rhythm";
 
 export default {
   title: "Rhythm",
