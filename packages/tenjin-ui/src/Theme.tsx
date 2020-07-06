@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import "reset-css";
 import styledComponentsRhythm from "@ceteio/styled-components-rhythm";
 import Rhythm from "./Rhythm";
 import capHeight from "cap-height/dist/cap-height";
+import { useHotkeys } from "react-hotkeys-hook";
 
 if (process.env.GET_WEBFONT_CAPHEIGHT) {
   import("webfontloader").then((WebFont) => {
@@ -16,14 +17,14 @@ if (process.env.GET_WEBFONT_CAPHEIGHT) {
   });
 }
 
-const rhythmHeight = 0.5;
-const show = true;
+const RHYTM_HEIGHT = 0.5;
+const SHOW_RHYTM = true;
 
 const rhythm = styledComponentsRhythm({
   baseFontSize: 1,
   defaultLineHeight: 1.3,
   baseLineHeight: 1,
-  rhythmHeight,
+  rhythmHeight: RHYTM_HEIGHT,
   capHeights: {
     Fantasque: 0.645,
   },
@@ -56,11 +57,17 @@ const BaseStyles = styled.div`
 `;
 
 function Theme({ children }: React.PropsWithChildren<{}>) {
+  const [showRhytm, setShowRhythm] = useState(SHOW_RHYTM);
+
+  useHotkeys("ctrl+g", () => {
+    setShowRhythm((prevValue) => !prevValue);
+  });
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <BaseStyles>{children}</BaseStyles>
-      <Rhythm show={show} spacing={16 * rhythmHeight} />
+      <Rhythm show={showRhytm} spacing={16 * RHYTM_HEIGHT} />
     </ThemeProvider>
   );
 }
