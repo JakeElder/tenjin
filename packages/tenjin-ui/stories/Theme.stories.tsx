@@ -1,6 +1,6 @@
 import React from "react";
 import Theme from "../src/Theme";
-import styled, { ThemedStyledProps } from "styled-components";
+import styled from "styled-components";
 
 export default {
   title: "Theme",
@@ -24,11 +24,6 @@ const rhythmic = {
     };
   },
 };
-
-const Box = styled.div`
-  background-color: #eee;
-  ${rhythmic.height(10)};
-`;
 
 const P1 = styled.p`
   margin-top: ${(props) => props.theme.rhythmSizing(2)}rem;
