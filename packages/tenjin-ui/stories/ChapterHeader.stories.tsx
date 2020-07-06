@@ -1,5 +1,5 @@
 import React from "react";
-import ChapterHeader from "../src/ChapterHeader";
+import ChapterHeader from "../src/components/ChapterHeader";
 
 export default {
   title: "Chapter Header",
