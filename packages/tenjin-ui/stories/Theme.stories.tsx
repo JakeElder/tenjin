@@ -3,7 +3,7 @@ import Theme from "../src/components/Theme";
 import styled from "styled-components";
 
 export default {
-  title: "Theme",
+  title: "Foundation | Theme",
   component: Theme,
 };
 
