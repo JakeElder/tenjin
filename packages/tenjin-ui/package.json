@@ -19,6 +19,7 @@
     "@ceteio/styled-components-rhythm": "^2.0.1",
     "@mindfulstudio/tenjin-tsconfig": "0.1.0",
     "@mindfulstudio/tenjin-types": "0.3.0",
+    "react-hotkeys-hook": "^2.1.4",
     "reset-css": "^5.0.1",
     "styled-components": "^5.1.1",
     "webfontloader": "^1.6.28"
