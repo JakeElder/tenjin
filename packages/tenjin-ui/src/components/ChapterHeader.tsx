@@ -7,19 +7,11 @@ type Props = {
   chapter: string;
 };
 
-const Work = styled.h1`
-  ${(props) => props.theme.setFontWithRhythm("Fantasque", 2.125, 1)}
-`;
+const Work = styled.h1``;
 
-const Author = styled.div`
-  margin-top: ${(props) => props.theme.rhythmSizing(1)}rem;
-  color: #959595;
-`;
+const Author = styled.div``;
 
-const ChapterTitle = styled.h2`
-  margin-top: ${(props) => props.theme.rhythmSizing(4)}rem;
-  ${(props) => props.theme.setFontWithRhythm("Fantasque", 2, 1)}
-`;
+const ChapterTitle = styled.h2``;
 
 const ChapterHeader: React.FC<Props> = ({ work, author, chapter }) => {
   return (
