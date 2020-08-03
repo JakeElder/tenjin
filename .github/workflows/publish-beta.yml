@@ -6,72 +6,10 @@ on:
       - develop
 
 jobs:
-  establish_changed:
-    name: Establish changed packages
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.ref }}
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npx
-          restore-keys: |
-            ${{ runner.os }}-npx
-      - name: Run Lerna changed
-        shell: bash --noprofile --norc {0}
-        run: |
-          npx lerna changed --all --json > changed.json
-          if [ $? -eq 1 ]
-          then
-            echo '[]' > changed.json
-            exit 0
-          fi
-      - name: Upload changed.json
-        uses: actions/upload-artifact@v1
-        with:
-          name: changed
-          path: changed.json
-
   publish_packages_to_npm:
     name: Publish packages to NPM
-    needs: establish_changed
     runs-on: ubuntu-latest
     steps:
-      - name: Restore changed.json
-        uses: actions/download-artifact@v1
-        with:
-          name: changed
-          path: .
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npx
-          restore-keys: |
-            ${{ runner.os }}-npx
-      - name: Establish required jobs
-        id: establish_required_jobs
-        run: |
-          num_changed_private=$( \
-            cat changed.json | npx jq '[.[] | select(.private == true)] | length')
-          num_changed_public=$(\
-            cat changed.json | npx jq '[.[] | select(.private == false)] | length')
-          echo "::set-output name=num_changed_private::$num_changed_private"
-          echo "::set-output name=num_changed_public::$num_changed_public"
-      - name: Test outputs
-        env:
-          NUM_CHANGED_PRIVATE: >
-            ${{ steps.establish_required_jobs.outputs.num_changed_private }}
-          NUM_CHANGED_PUBLIC: >
-            ${{ steps.establish_required_jobs.outputs.num_changed_public }}
-        run: echo "${NUM_CHANGED_PRIVATE} ${NUM_CHANGED_PUBLIC}"
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -100,6 +38,7 @@ jobs:
           npx lerna version \
             --conventional-prerelease \
             --preid beta \
+            --no-changelog \
             --amend \
             --yes
           git push --force origin $GITHUB_HEAD_REF
