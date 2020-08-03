@@ -1,6 +1,6 @@
 {
   "name": "@mindfulstudio/tenjin-tsconfig",
-  "version": "0.4.0-beta.5",
+  "version": "0.4.0",
   "description": "TS Config for Tenjin",
   "author": "Jake Elder",
   "main": "tsconfig.json",
