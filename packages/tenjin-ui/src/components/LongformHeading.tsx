@@ -12,7 +12,7 @@ const Root = styled("h1", { shouldForwardProp })(typography);
 
 function LongformHeading({ children, h }: Props) {
   return (
-    <Root as={`h${h}`} fontSize={3}>
+    <Root as={`h${h}`} fontSize={5}>
       {children}
     </Root>
   );
