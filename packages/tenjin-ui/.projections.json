@@ -1,5 +1,5 @@
 {
-  "src/*.tsx": {
+  "src/components/*.tsx": {
     "alternate": "stories/{}.stories.tsx",
     "type": "component"
   },

@@ -1,6 +1,6 @@
 import React from "react";
 import Theme from "../src/components/Theme";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 export default {
   title: "Foundation | Theme",
