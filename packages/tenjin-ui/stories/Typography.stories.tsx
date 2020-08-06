@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { LongformHeading } from "../src/components/Typography";
+import {
+  LongformHeading,
+  LongformDetail,
+  LongformSubheading,
+} from "../src/components/Typography";
 
 export default {
   title: "Foundation | Typography",
@@ -17,6 +21,16 @@ const textStyles: TextStyle[] = [
     ids: ["Longform Heading", "Exercise Name"],
     Component: LongformHeading,
     description: "Fantasque Sans Mono Regular 32px #000",
+  },
+  {
+    ids: ["Longform Detail", "Exercise Subheading"],
+    Component: LongformDetail,
+    description: "Fantasque Sans Mono Regular 20px #999",
+  },
+  {
+    ids: ["Longform Subheading", "Exercise Heading"],
+    Component: LongformSubheading,
+    description: "Fantasque Sans Mono Bold 24px #000",
   },
 ];
 

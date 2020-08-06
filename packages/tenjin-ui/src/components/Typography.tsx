@@ -34,3 +34,28 @@ export const LongformHeading = headingFactory({
   fontSize: 4,
   color: "shades.0",
 });
+
+export const ExerciseName = headingFactory({
+  fontSize: 4,
+  color: "shades.0",
+});
+
+export const LongformDetail = headingFactory({
+  fontSize: 3,
+  color: "shades.6",
+});
+
+export const ExerciseSubheading = headingFactory({
+  fontSize: 3,
+  color: "shades.6",
+});
+
+export const LongformSubheading = headingFactory({
+  fontSize: 4,
+  color: "shades.0",
+});
+
+export const ExerciseHeading = headingFactory({
+  fontSize: 4,
+  color: "shades.0",
+});
