@@ -17,7 +17,12 @@ const Heading = styled("h1", { shouldForwardProp })(typography, color);
 
 function headingFactory({ fontSize, color }: HeadingFactoryProps) {
   const R = ({ children, h }: HeadingProps) => (
-    <Heading as={`h${h}`} fontSize={fontSize} color={color}>
+    <Heading
+      as={`h${h}`}
+      fontFamily="heading"
+      fontSize={fontSize}
+      color={color}
+    >
       {children}
     </Heading>
   );

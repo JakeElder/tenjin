@@ -19,19 +19,33 @@ const globalCSS = css`
   }
 `;
 
-const BaseStyles = styled.div`
-  font-family: "Fantasque";
-`;
-
 const theme = {
+  fonts: {
+    heading: "Fantasque",
+    body: "Fantasque",
+  },
   fontSizes: [".75rem", ".875rem", "1rem", "1.25rem", "1.5rem", "2rem"],
+  colors: {
+    shades: [
+      "#000",
+      "#222",
+      "#444",
+      "#555",
+      "#666",
+      "#888",
+      "#999",
+      "#CCC",
+      "#DDD",
+      "#FBFBFB",
+    ],
+  },
 };
 
 function Theme({ children }: React.PropsWithChildren<{}>) {
   return (
     <ThemeProvider theme={theme}>
       <Global styles={globalCSS} />
-      <BaseStyles>{children}</BaseStyles>
+      {children}
     </ThemeProvider>
   );
 }
