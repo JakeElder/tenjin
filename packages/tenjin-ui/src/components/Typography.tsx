@@ -4,7 +4,7 @@ import { typography, color } from "styled-system";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 
 type HeadingProps = {
-  children: string;
+  children: React.ReactNode;
   h: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
@@ -58,4 +58,30 @@ export const LongformSubheading = headingFactory({
 export const ExerciseHeading = headingFactory({
   fontSize: 4,
   color: "shades.0",
+});
+
+type BodyCopyFactoryProps = {
+  fontSize?: number;
+  color?: string;
+};
+
+type BodyCopyProps<AS> = {
+  children: React.ReactNode;
+  as?: AS;
+};
+
+const BodyCopy = styled("span", { shouldForwardProp })(typography, color);
+
+function bodyCopyFactory<T>({ fontSize, color }: BodyCopyFactoryProps) {
+  const R = ({ children, as }: BodyCopyProps<T>) => (
+    <BodyCopy as={as} fontFamily="body" fontSize={fontSize} color={color}>
+      {children}
+    </BodyCopy>
+  );
+  return R;
+}
+
+export const LongformCopy = bodyCopyFactory<"p" | "span">({
+  fontSize: 1,
+  color: "shades.1",
 });

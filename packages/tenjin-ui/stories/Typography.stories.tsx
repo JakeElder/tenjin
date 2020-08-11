@@ -4,6 +4,7 @@ import {
   LongformHeading,
   LongformDetail,
   LongformSubheading,
+  LongformCopy,
 } from "../src/components/Typography";
 
 export default {
@@ -32,6 +33,12 @@ const textStyles: TextStyle[] = [
     Component: LongformSubheading,
     description: "Fantasque Sans Mono Bold 24px #000",
   },
+  {
+    ids: ["Longform Copy"],
+    Component: LongformCopy,
+    description:
+      "Fantasque Sans Mono regular 16px #222. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. ",
+  },
 ];
 
 const Table = styled.table`
@@ -43,6 +50,7 @@ const TR = styled.tr`
 `;
 
 const IDTD = styled.td`
+  white-space: nowrap;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   background-color: #f8f8f8;
