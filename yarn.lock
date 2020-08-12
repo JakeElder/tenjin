@@ -3809,6 +3809,13 @@
   dependencies:
     csstype "^3.0.2"
 
+"@types/styled-system__css@^5.0.13":
+  version "5.0.13"
+  resolved "https://registry.yarnpkg.com/@types/styled-system__css/-/styled-system__css-5.0.13.tgz#37ccff101739ed4c67b2f13142f67fb656f5dd0f"
+  integrity sha512-weoDj0SVCGB8/BmFVbQKaOCygGoMWiPGt+CVtgWHC/pcWtiWioCplMxTpza2cpYQs/Cf72+A4mAY24a3RbXllQ==
+  dependencies:
+    csstype "^3.0.2"
+
 "@types/styled-system__should-forward-prop@^5.1.1":
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/@types/styled-system__should-forward-prop/-/styled-system__should-forward-prop-5.1.1.tgz#44df913bbd78ef56b4cab9cb1f91ccd92fd5d7fc"
