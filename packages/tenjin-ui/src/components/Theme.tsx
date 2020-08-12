@@ -26,6 +26,10 @@ const theme = {
   },
   fontSizes: [".75rem", ".875rem", "1rem", "1.25rem", "1.5rem", "2rem"],
   colors: {
+    brand: [
+      ["#32B66B", "#4BCE84", "#9BE4BA"],
+      ["#9D4AC0", "#B16FCD", "#DABBE7"],
+    ],
     shades: [
       "#000",
       "#222",

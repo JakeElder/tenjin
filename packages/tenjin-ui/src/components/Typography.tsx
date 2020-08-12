@@ -1,87 +1,161 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { typography, color } from "styled-system";
+import { variant } from "styled-system";
+import css from "@styled-system/css";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 
-type HeadingProps = {
-  children: React.ReactNode;
-  h: 1 | 2 | 3 | 4 | 5 | 6;
-};
+// type CopyProps<AS> = {
+//   children: React.ReactNode;
+//   as: AS;
+// };
 
-type HeadingFactoryProps = {
-  fontSize?: number;
-  color?: string;
-};
+// type CopyFactoryStyleMap = {
+//   fontFamily: "heading" | "body";
+//   fontSize: number;
+//   color: string;
+// };
 
-const Heading = styled("h1", { shouldForwardProp })(typography, color);
+// type CopyFactoryStyleVariantMap = {
+//   [key: string]: Partial<CopyFactoryStyleMap>;
+// };
 
-function headingFactory({ fontSize, color }: HeadingFactoryProps) {
-  const R = ({ children, h }: HeadingProps) => (
-    <Heading
-      as={`h${h}`}
-      fontFamily="heading"
-      fontSize={fontSize}
-      color={color}
-    >
-      {children}
-    </Heading>
-  );
-  R.defaultProps = { h: 1 } as Partial<HeadingProps>;
-  return R;
-}
+// const Copy = styled("span", { shouldForwardProp })(typography, color);
 
-export const LongformHeading = headingFactory({
-  fontSize: 4,
-  color: "shades.0",
+// function copyFactory<T, V = never>(
+//   styles: CopyFactoryStyleMap,
+//   variants?: CopyFactoryStyleVariantMap
+// ) {
+//   const R = ({
+//     children,
+//     as,
+//     ...rest
+//   }: CopyProps<T> & { [K in keyof V]: boolean }) => {
+//     const { fontFamily, fontSize, color } = styles;
+//     return (
+//       <Copy
+//         as={as}
+//         fontFamily={fontFamily}
+//         fontSize={fontSize}
+//         color={color}
+//         {...rest}
+//       >
+//         {children}
+//       </Copy>
+//     );
+//   };
+//   return R;
+// }
+
+// type HTMLHeadingTagName = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+// type HTMLLongformTagName = "p" | "span" | "strong" | "em";
+// type HTMLCopyTagName = HTMLLongformTagName | HTMLHeadingTagName;
+
+// export const LongformHeading = copyFactory<HTMLCopyTagName>({
+//   fontFamily: "heading",
+//   fontSize: 5,
+//   color: "shades.0",
+// });
+
+// export const ExerciseName = copyFactory<HTMLCopyTagName>({
+//   fontFamily: "heading",
+//   fontSize: 4,
+//   color: "shades.0",
+// });
+
+// export const LongformDetail = copyFactory<HTMLCopyTagName>({
+//   fontFamily: "heading",
+//   fontSize: 3,
+//   color: "shades.6",
+// });
+
+// export const ExerciseSubheading = copyFactory<HTMLCopyTagName>({
+//   fontFamily: "heading",
+//   fontSize: 3,
+//   color: "shades.6",
+// });
+
+// export const LongformSubheading = copyFactory<HTMLCopyTagName>({
+//   fontFamily: "heading",
+//   fontSize: 4,
+//   color: "shades.0",
+// });
+
+// export const ExerciseHeading = copyFactory<HTMLCopyTagName>({
+//   fontFamily: "heading",
+//   fontSize: 4,
+//   color: "shades.0",
+// });
+
+// export const LongformCopy = copyFactory<HTMLCopyTagName>({
+//   fontFamily: "body",
+//   fontSize: 2,
+//   color: "shades.1",
+// });
+
+// export const FigCaption = copyFactory<HTMLCopyTagName>({
+//   fontFamily: "body",
+//   fontSize: 2,
+//   color: "shades.5",
+// });
+
+// export const LongformSectionHeading = copyFactory<HTMLCopyTagName>({
+//   fontFamily: "heading",
+//   fontSize: 4,
+//   color: "brand.0.0",
+// });
+
+// export const ChecklistHeading = copyFactory<
+//   HTMLCopyTagName,
+//   "inactive" | "disabled"
+// >(
+//   {
+//     fontFamily: "heading",
+//     fontSize: 3,
+//     color: "shades.3",
+//   },
+//   {
+//     inactive: {
+//       color: "shades.5",
+//     },
+//   }
+// );
+
+// <ChecklistHeading disabled ></ChecklistHeading>;
+
+// export const LongformHeading = styled("span", { shouldForwardProp })(
+//   css({
+//     fontFamily: "heading",
+//     fontSize: 5,
+//     color: "shades.0",
+//   })
+// );
+
+type AnyTag =
+  | string
+  | React.FunctionComponent<never>
+  | (new (props: never) => React.Component);
+
+type PropsOf<Tag> = Tag extends keyof JSX.IntrinsicElements
+  ? JSX.IntrinsicElements[Tag]
+  : Tag extends React.ComponentType<infer Props>
+  ? Props & JSX.IntrinsicAttributes
+  : never;
+
+export const LongformHeading = styled<"span", { variant: "disabled" }>("span", {
+  shouldForwardProp,
+})(
+  css({ fontFamily: "heading", fontSize: 5, color: "shades.0" }),
+  variant({
+    variants: {
+      disabled: {
+        color: "shades.5",
+      },
+    },
+  })
+);
+
+export const Button = styled("span")({
+  color: "red",
 });
 
-export const ExerciseName = headingFactory({
-  fontSize: 4,
-  color: "shades.0",
-});
-
-export const LongformDetail = headingFactory({
-  fontSize: 3,
-  color: "shades.6",
-});
-
-export const ExerciseSubheading = headingFactory({
-  fontSize: 3,
-  color: "shades.6",
-});
-
-export const LongformSubheading = headingFactory({
-  fontSize: 4,
-  color: "shades.0",
-});
-
-export const ExerciseHeading = headingFactory({
-  fontSize: 4,
-  color: "shades.0",
-});
-
-type BodyCopyFactoryProps = {
-  fontSize?: number;
-  color?: string;
-};
-
-type BodyCopyProps<AS> = {
-  children: React.ReactNode;
-  as?: AS;
-};
-
-const BodyCopy = styled("span", { shouldForwardProp })(typography, color);
-
-function bodyCopyFactory<T>({ fontSize, color }: BodyCopyFactoryProps) {
-  const R = ({ children, as }: BodyCopyProps<T>) => (
-    <BodyCopy as={as} fontFamily="body" fontSize={fontSize} color={color}>
-      {children}
-    </BodyCopy>
-  );
-  return R;
-}
-
-export const LongformCopy = bodyCopyFactory<"p" | "span">({
-  fontSize: 1,
-  color: "shades.1",
-});
+// <LongformHeading as="a" href="#place" va></LongformHeading>;

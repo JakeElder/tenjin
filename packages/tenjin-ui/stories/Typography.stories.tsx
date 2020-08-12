@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "@emotion/styled";
 import {
+  Button,
   LongformHeading,
-  LongformDetail,
-  LongformSubheading,
-  LongformCopy,
+  // LongformDetail,
+  // LongformSubheading,
+  // LongformCopy,
+  // FigCaption,
+  // LongformSectionHeading,
+  // ChecklistHeading,
 } from "../src/components/Typography";
 
 export default {
@@ -23,22 +27,37 @@ const textStyles: TextStyle[] = [
     Component: LongformHeading,
     description: "Fantasque Sans Mono Regular 32px #000",
   },
-  {
-    ids: ["Longform Detail", "Exercise Subheading"],
-    Component: LongformDetail,
-    description: "Fantasque Sans Mono Regular 20px #999",
-  },
-  {
-    ids: ["Longform Subheading", "Exercise Heading"],
-    Component: LongformSubheading,
-    description: "Fantasque Sans Mono Bold 24px #000",
-  },
-  {
-    ids: ["Longform Copy"],
-    Component: LongformCopy,
-    description:
-      "Fantasque Sans Mono regular 16px #222. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. ",
-  },
+  // {
+  //   ids: ["Longform Detail", "Exercise Subheading"],
+  //   Component: LongformDetail,
+  //   description: "Fantasque Sans Mono Regular 20px #999",
+  // },
+  // {
+  //   ids: ["Longform Subheading", "Exercise Heading"],
+  //   Component: LongformSubheading,
+  //   description: "Fantasque Sans Mono Bold 24px #000",
+  // },
+  // {
+  //   ids: ["Longform Copy"],
+  //   Component: LongformCopy,
+  //   description:
+  //     "Fantasque Sans Mono regular 16px #222. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. ",
+  // },
+  // {
+  //   ids: ["Fig Caption"],
+  //   Component: FigCaption,
+  //   description: "Fantasque Sans Mono regular 16px #888",
+  // },
+  // {
+  //   ids: ["Longform Section Heading"],
+  //   Component: LongformSectionHeading,
+  //   description: "Fantasque Sans Mono Bold 24px #32B66B",
+  // },
+  // {
+  //   ids: ["Checklist Heading"],
+  //   Component: ChecklistHeading,
+  //   description: "Fantasque Sans Mono Regular 20px #555",
+  // },
 ];
 
 const Table = styled.table`
@@ -63,25 +82,4 @@ const DescriptionTD = styled.td`
   padding-left: 22px;
 `;
 
-export const Default = () => (
-  <Table>
-    <tbody>
-      {textStyles.map(({ ids, Component, description }) => {
-        return (
-          <TR key={ids.join()}>
-            <IDTD>
-              {ids.map((id) => (
-                <div style={{ marginBottom: 4 }} key={id}>
-                  {id}
-                </div>
-              ))}
-            </IDTD>
-            <DescriptionTD>
-              <Component>{description}</Component>
-            </DescriptionTD>
-          </TR>
-        );
-      })}
-    </tbody>
-  </Table>
-);
+export const Default = () => <Button>text</Button>;
