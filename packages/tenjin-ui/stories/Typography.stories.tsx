@@ -9,12 +9,21 @@ import {
   FigCaption,
   LongformSectionHeading,
   ChecklistHeading,
+  MastHeading,
+  MastCaption,
+  OrientationHeading,
+  OrientationSummary,
+  TOCHeading,
+  TOCSubheading,
+  ChapterLink,
+  GridHeader,
+  PhaseStep,
+  Button,
 } from "../src/components/Typography";
 
 export default {
   title: "Foundation / Typography",
   parameters: {
-    layout: "fullscreen",
     controls: {
       disabled: true,
     },
@@ -25,6 +34,9 @@ type TextStyle = {
   ids: string[];
   Component: React.ReactType;
   description: string;
+  variants?: {
+    [key: string]: string;
+  };
 };
 
 const textStyles: TextStyle[] = [
@@ -63,11 +75,74 @@ const textStyles: TextStyle[] = [
     ids: ["Checklist Heading"],
     Component: ChecklistHeading,
     description: "Fantasque Sans Mono Regular 20px #555",
+    variants: {
+      inactive: "Fantasque Sans Mono Regular 20px #CCC",
+    },
+  },
+  {
+    ids: ["Mast Heading"],
+    Component: MastHeading,
+    description: "Fantasque Sans Mono Regular 24px #444",
+  },
+  {
+    ids: ["Mast Caption"],
+    Component: MastCaption,
+    description: "Fantasque Sans Mono Regular 12px #888",
+  },
+  {
+    ids: ["Orientation Heading"],
+    Component: OrientationHeading,
+    description: "Fantasque Sans Mono Regular 20px #666",
+  },
+  {
+    ids: ["Orientation Summary"],
+    Component: OrientationSummary,
+    description: "Fantasque Sans Mono Regular 14px #999",
+  },
+  {
+    ids: ["TOC Heading"],
+    Component: TOCHeading,
+    description: "Fantasque Sans Mono Bold 14px #888",
+  },
+  {
+    ids: ["TOC Subheading"],
+    Component: TOCSubheading,
+    description: "Fantasque Sans Mono Regular 16px #888",
+  },
+  {
+    ids: ["Chapter Link", "Icon Link"],
+    Component: ChapterLink,
+    description: "Fantasque Sans Mono Regular 20px #4499CC",
+  },
+  {
+    ids: ["Grid Header"],
+    Component: GridHeader,
+    description: "Fantasque Sans Mono Regular 32px #DDD",
+    variants: {
+      active: "Fantasque Sans Mono Regular 32px #555",
+    },
+  },
+  {
+    ids: ["Phase Step"],
+    Component: PhaseStep,
+    description: "Fantasque Sans Mono Regular 24px #DDD",
+    variants: {
+      active: "Fantasque Sans Mono Regular 24px #32B66B",
+    },
+  },
+  {
+    ids: ["Button"],
+    Component: Button,
+    description: "Fantasque Sans Mono Regular 20px #4499CC",
+    variants: {
+      disabled: "Fantasque Sans Mono Regular 20px #CCC",
+    },
   },
 ];
 
 const Table = styled.table`
   width: 100%;
+  border: 1px solid #d9d9d9;
 `;
 
 const TR = styled.tr`
@@ -86,23 +161,49 @@ const IDTD = styled.td`
 const DescriptionTD = styled.td`
   vertical-align: middle;
   padding-left: 22px;
+  padding: 12px 16px 12px 22px;
 `;
+
+const Variant = styled.div`
+  padding-top: 4px;
+`;
+
+const Variants = ({ TextStyle }: { TextStyle: TextStyle }) => {
+  const { variants, Component, description } = TextStyle;
+  const base = <Component>{description}</Component>;
+  if (typeof variants === "undefined") {
+    return base;
+  }
+  return (
+    <>
+      {base}
+      {Object.keys(variants).map((n) => (
+        <Variant key={n}>
+          {React.createElement(Component, {
+            [n]: true,
+            children: `[${n}] ${variants[n]}`,
+          })}
+        </Variant>
+      ))}
+    </>
+  );
+};
 
 export const Default = () => (
   <Table>
     <tbody>
-      {textStyles.map(({ ids, Component, description }) => {
+      {textStyles.map((TextStyle) => {
         return (
-          <TR key={ids.join()}>
+          <TR key={TextStyle.ids.join()}>
             <IDTD>
-              {ids.map((id) => (
+              {TextStyle.ids.map((id) => (
                 <div style={{ marginBottom: 4 }} key={id}>
                   {id}
                 </div>
               ))}
             </IDTD>
             <DescriptionTD>
-              <Component as="h3">{description}</Component>
+              <Variants TextStyle={TextStyle} />
             </DescriptionTD>
           </TR>
         );
