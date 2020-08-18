@@ -1,15 +1,17 @@
 import React from "react";
-import ChapterHeader from "../src/components/ChapterHeader";
+import { Story, Meta } from "@storybook/react/types-6-0";
+import ChapterHeader, { Props } from "../src/components/ChapterHeader";
 
 export default {
-  title: "Components | Chapter Header",
+  title: "Components / Chapter Header",
   component: ChapterHeader,
-};
+} as Meta;
 
-export const Default = () => (
-  <ChapterHeader
-    work="American English Phonetics for Thai Learners"
-    author="Jirapat J. Jangjamras"
-    chapter="Chapter 3: Vowels"
-  />
-);
+const Template: Story<Props> = (args) => <ChapterHeader {...args} />;
+
+export const Default = Template.bind({});
+Default.args = {
+  work: "American English Phonetics for Thai Learners",
+  author: "Jirapat J. Jangjamras",
+  chapter: "Chapter 3: Vowels",
+};

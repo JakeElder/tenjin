@@ -13,7 +13,7 @@ const Author = styled.div``;
 
 const ChapterTitle = styled.h2``;
 
-const ChapterHeader: React.FC<Props> = ({ work, author, chapter }) => {
+const ChapterHeader = ({ work, author, chapter }: Props) => {
   return (
     <>
       <Work>{work}</Work>
@@ -24,3 +24,4 @@ const ChapterHeader: React.FC<Props> = ({ work, author, chapter }) => {
 };
 
 export default ChapterHeader;
+export type { Props };
