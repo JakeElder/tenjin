@@ -1,6 +1,5 @@
 import React from "react";
 import { Global, css } from "@emotion/core";
-import styled from "@emotion/styled";
 import { ThemeProvider } from "emotion-theming";
 import "reset-css";
 
@@ -25,11 +24,13 @@ const theme = {
     body: "Fantasque",
   },
   fontSizes: [".75rem", ".875rem", "1rem", "1.25rem", "1.5rem", "2rem"],
+  fontWeights: ["regular", "bold"],
   colors: {
     brand: [
       ["#32B66B", "#4BCE84", "#9BE4BA"],
       ["#9D4AC0", "#B16FCD", "#DABBE7"],
     ],
+    link: ["#2F7DAC", "#4499CC"],
     shades: [
       "#000",
       "#222",
