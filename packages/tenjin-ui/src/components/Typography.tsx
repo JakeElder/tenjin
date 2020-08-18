@@ -109,5 +109,3 @@ export const ChecklistHeading = copyFactory<"inactive">(
     },
   }
 );
-
-<ChecklistHeading inactive></ChecklistHeading>;

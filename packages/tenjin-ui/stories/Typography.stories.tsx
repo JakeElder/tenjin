@@ -1,4 +1,5 @@
 import React from "react";
+import { Meta } from "@storybook/react/types-6-0";
 import styled from "@emotion/styled";
 import {
   LongformHeading,
@@ -11,8 +12,14 @@ import {
 } from "../src/components/Typography";
 
 export default {
-  title: "Foundation | Typography",
-};
+  title: "Foundation / Typography",
+  parameters: {
+    layout: "fullscreen",
+    controls: {
+      disabled: true,
+    },
+  },
+} as Meta;
 
 type TextStyle = {
   ids: string[];

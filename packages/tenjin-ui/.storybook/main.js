@@ -1,10 +1,13 @@
 module.exports = {
+  addons: [
+    "@storybook/addon-viewport",
+    "@storybook/addon-docs",
+    "@storybook/addon-backgrounds",
+    "@storybook/addon-controls",
+  ],
   stories: ["../stories/**/*.stories.tsx"],
-  addons: ["@storybook/preset-typescript"],
-  webpackFinal: async (config) => {
-    config.module.rules[0].use[0].options.presets.push(
-      require.resolve("@emotion/babel-preset-css-prop")
-    );
+  babel: (config) => {
+    config.presets.push(require.resolve("@emotion/babel-preset-css-prop"));
     return config;
   },
 };
