@@ -1,0 +1,11 @@
+{
+  "name": "@mindfulstudio/storybook-preset-emotion",
+  "version": "0.5.0",
+  "description": "(Super) MVP Emotion preset for Storybook",
+  "author": "Jake Elder <jake@jakes.world>",
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "peerDependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.27"
+  }
+}

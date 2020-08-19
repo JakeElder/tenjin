@@ -4,10 +4,7 @@ module.exports = {
     "@storybook/addon-docs",
     "@storybook/addon-backgrounds",
     "@storybook/addon-controls",
+    "@mindfulstudio/storybook-preset-emotion",
   ],
   stories: ["../stories/**/*.stories.tsx"],
-  babel: (config) => {
-    config.presets.push(require.resolve("@emotion/babel-preset-css-prop"));
-    return config;
-  },
 };
