@@ -14,6 +14,8 @@ module.exports = withTranspiledModules({
   },
   env: {
     GRAPHQL_URL: process.env.GRAPHQL_URL,
-    POLL_INTERVAL: process.env.NODE_ENV === "stage" ? 1000 : 0,
+    POLL_INTERVAL: ["stage", "development"].includes(process.env.NODE_ENV)
+      ? 1000
+      : 0,
   },
 });
