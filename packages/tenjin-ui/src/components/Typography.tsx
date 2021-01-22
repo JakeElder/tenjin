@@ -2,52 +2,79 @@ import React from "react";
 import css from "@styled-system/css";
 import _ from "lodash";
 
-type CopyProps = {
+type TypeProps = {
   as: string;
   children: React.ReactNode;
 };
 
-type CopyFactoryStyleMap = {
+type CSSMap = {
   fontFamily: "heading" | "body";
-  fontSize: number;
   fontWeight?: "regular" | "bold";
+  fontSize: number;
   color: string;
 };
 
-type CopyFactoryModifierMap = {
-  [key: string]: Partial<CopyFactoryStyleMap>;
-};
+type ModifierName = "disabled" | "active" | "inactive";
+type ModifierList = ModifierName | undefined;
 
-function copyFactory<M extends string>(
-  styles: CopyFactoryStyleMap,
-  modifierStyles: CopyFactoryModifierMap = {}
+type ModifierMap<T extends ModifierList> = Record<
+  Exclude<T, undefined>,
+  Partial<CSSMap>
+>;
+
+function mergeCSS(
+  modifiers: ModifierName[],
+  baseCSS: CSSMap,
+  modifierCSS: Partial<ModifierMap<ModifierName>>
 ) {
-  const R = ({
+  return _.reduce(
+    modifiers,
+    (result, key) => {
+      return { ...result, ...modifierCSS[key] };
+    },
+    baseCSS
+  );
+}
+
+type WithModifierBooleans<T, U extends ModifierList> = T &
+  Partial<Record<Exclude<U, undefined>, boolean>>;
+
+function hasKey<O>(obj: O, key: keyof any): key is keyof O {
+  return key in obj;
+}
+
+function copyFactory<T extends ModifierList = undefined>(
+  baseCSS: CSSMap,
+  modifierCSS?: ModifierMap<T>
+) {
+  function Type({
     children,
     as,
     ...modifiers
-  }: CopyProps & Partial<{ [key in M]: boolean }>) => {
-    const mergedStyles = _.reduce(
-      modifiers,
-      (result, _, key) => {
-        return { ...result, ...modifierStyles[key] };
-      },
-      styles
-    );
+  }: WithModifierBooleans<TypeProps, T>) {
+    const activeModifiers: any = Object.keys(modifiers).filter((m) => {
+      if (hasKey(modifiers, m)) {
+        return modifiers[m];
+      }
+    });
 
-    const C = as as React.ReactType;
-    return <C children={children} css={css(mergedStyles)} />;
-  };
+    const mergedCSS =
+      activeModifiers.length > 0 && typeof modifierCSS !== "undefined"
+        ? mergeCSS(activeModifiers, baseCSS, modifierCSS)
+        : baseCSS;
 
-  R.defaultProps = { as: "span" } as Partial<CopyProps>;
+    const Component = as as React.ReactType;
+    return <Component children={children} css={css(mergedCSS)} />;
+  }
 
-  return R;
+  Type.defaultProps = { as: "span" } as Partial<TypeProps>;
+
+  return Type;
 }
 
 export const LongformHeading = copyFactory({
   fontFamily: "heading",
   fontSize: 5,
-  fontWeight: "bold",
   color: "shades.0",
 });
 

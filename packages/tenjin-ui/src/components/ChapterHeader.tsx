@@ -1,27 +1,24 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { LongformHeading, Button } from "./Typography";
 
-type Props = {
+export type Props = {
   work: string;
   author: string;
   chapter: string;
 };
 
-const Work = styled.h1``;
-
 const Author = styled.div``;
 
 const ChapterTitle = styled.h2``;
 
-const ChapterHeader = ({ work, author, chapter }: Props) => {
+export default function ChapterHeader({ work, author, chapter }: Props) {
   return (
     <>
-      <Work>{work}</Work>
+      <Button disabled></Button>
+      <LongformHeading>{work}</LongformHeading>
       <Author>by {author}</Author>
       <ChapterTitle>{chapter}</ChapterTitle>
     </>
   );
-};
-
-export default ChapterHeader;
-export type { Props };
+}
